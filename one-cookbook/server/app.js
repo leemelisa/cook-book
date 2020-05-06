@@ -1,17 +1,27 @@
-const http = require("http");
-const hostname = '127.0.0.1';
-const port = 9000;
+// create express server
+const express = require('express');
+const app = express();
+const PORT = 9000;
 
-//Create HTTP server and listen on port 3000 for requests
-const server = http.createServer((req, res) => {
+// attaching the following middleware
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const mongoose = require('mongoose');
 
-  //Set the response HTTP header with HTTP status and Content type
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World\n');
-});
+app.use(cors());
+app.use(bodyParser.json());
 
-//listen for request on port 3000, and as a callback function have the port listened on logged
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+// connect mongodb with mongoose
+mongoose.connect(
+    'mongodb://127.0.0.1:27017/onecookbook', 
+    { useNewUrlParser: true, useUnifiedTopology: true }
+);
+const connection = mongoose.connection;
+connection.once('open', function() {
+    console.log("MongoDB database connection established successfully");
+})
+
+// server is listening on port 9000
+app.listen(PORT, function() {
+    console.log("Server is running on Port: " + PORT);
 });
