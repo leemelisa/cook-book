@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-let Recipe = new Recipe({
+let RecipeSchema = new Schema({
     title: {
         type: String,
         require: [true, 'Insert recipe title']
@@ -14,11 +14,11 @@ let Recipe = new Recipe({
         type: [String], 
         enum: ['Breakfast', 'Lunch', 'Dinner', 'Snack', 'Side Dish', 'Dessert'],
     },
-    total_rating: {
+    avg_rating: {
         type: Number,
         default: 0,
     },
-    serving_size: {
+    serving_sizes: {
         type: Number,
         default: 1,
     },
@@ -26,15 +26,15 @@ let Recipe = new Recipe({
         type: String,
         enum: ['American', 'Chinese', 'Korean', 'Japanese', 'Mexican', 'Singaporean'],
     },
-    instruction: {
+    instructions: {
         type: [String],
         require: [true, 'Insert cooking instructions'],
     },
-    note: {
+    notes: {
         type: String,
         default: '',
     },
-    ingredient: [
+    ingredients: [
         {
             name: {
                 type: String,
@@ -47,9 +47,8 @@ let Recipe = new Recipe({
             }
         }
     ],
-    rating: [
+    ratings: [
         {
-            user: String,
             message: String,
             date_created: {
                 type: Date,
@@ -65,4 +64,4 @@ let Recipe = new Recipe({
     ]
 });
 
-module.exports = mongoose.model('Recipe', Recipe);
+module.exports = mongoose.model('RecipeSchema', RecipeSchema);
