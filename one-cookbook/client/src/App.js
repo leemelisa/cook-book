@@ -10,6 +10,7 @@ import Nav from './components/layouts/Nav';
 function App() {
   return (
 		<BrowserRouter>
+			<Nav />
 			<Switch>
 				<Route path='/' exact>
 					<Home />
