@@ -10,4 +10,4 @@ class RecipeDetail extends React.Component {
     }
 }
 
-export default RecipeDetail
+export default RecipeDetail;
