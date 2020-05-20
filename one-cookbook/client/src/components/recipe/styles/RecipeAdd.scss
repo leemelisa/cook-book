@@ -1,0 +1,33 @@
+.fixed_picture {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    bottom: 0;
+}
+.form_container {
+    // margin-top: 20px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 15px 200px;
+
+    .input_wrapper, .select_wrapper {
+        width: 100%;
+        border-radius: 3px;
+        padding: 12px 20px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        display: inline-block;
+        box-sizing: border-box;
+        font-size: 15px;
+    }
+    
+    .submit_wrapper {
+        width: 100%;
+        border-radius: 4px;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        font-size: 15px;
+    }
+}

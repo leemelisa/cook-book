@@ -12,7 +12,7 @@ class Nav extends React.Component {
                 <ul>
                     <li className='logo'>
                         <NavLink exact to='/'>
-                            One CookBook
+                            One Cookbook
                         </NavLink>
                     </li>
                     <li>
