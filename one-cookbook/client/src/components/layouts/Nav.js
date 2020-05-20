@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, withRouter, Router } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import ReactTooltip from 'react-tooltip';
 import './styles/Nav.scss';
 
