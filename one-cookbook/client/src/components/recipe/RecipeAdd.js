@@ -1,5 +1,4 @@
 import React from 'react';
-import AddCircleIcon from '@material-ui/icons/AddCircle';
 import './styles/RecipeAdd.scss';
 import headerImg from './styles/coverImg.jpg';
 
@@ -45,27 +44,28 @@ class RecipeAdd extends React.Component {
             });            
         }
 
-        console.log(`${e.target.name}: ${e.target.value}`)
+        // console.log(`${e.target.name}: ${e.target.value}`)
     }
 
-    // add a new blank instruction to array cause auto reloading
-    addStep = (e) => {
-        this.setState((prevState) => ({
-            instructions: [...prevState.instructions, {step: ''}]
-        }));
-        
-        console.log(this.state.instructions)
-    }
+    // add a empty default value to instruction/ingredients array cause auto reloading to 
+    // add new input to page
+    addNewInput = e => {
+        if (e.target.name === 'addStep') {
+            
+            this.setState((prevState) => ({
+                instructions: [...prevState.instructions, {step: ''}]
+            }));            
+        } else {
+            this.setState((prevState) => ({
+                ingredients: [...prevState.ingredients, {
+                    name: '', 
+                    measurement: 0, 
+                    unit: 'cup'
+                }]
+            }));            
+        }
 
-    // add new blank ingredient to ingredient arry to trigger reload to add new input 
-    addIngredient = e => {
-        this.setState((prevState) => ({
-            ingredients: [...prevState.ingredients, {
-                name: '', 
-                measurement: 0, 
-                unit: 'cup'
-            }]
-        }));
+        e.preventDefault();
     }
 
     handleOnSubmit = e => {
@@ -73,10 +73,10 @@ class RecipeAdd extends React.Component {
             title: this.state.title,
             description: this.state.description,
             course: this.state.course,
-            serving_sizes: this.state.servingSize,
             cuisine: this.state.cuisine,
+            serving_sizes: this.state.servingSize,
             ingredients: this.state.ingredients,
-            instruction: this.state.instructions,
+            instructions: this.state.instructions,
             notes: this.state.notes
         }
         console.log(data);
@@ -102,7 +102,7 @@ class RecipeAdd extends React.Component {
         return(
             <div>
                 <img src={headerImg} alt='headerLogo' className='fixed_picture' />
-                <form className='form_container'onSubmit={ e => this.handleOnSubmit(e)} onChange={ e => this.handleInputChange(e)}>
+                <form className='form_container' onSubmit={ e => this.handleOnSubmit(e)} onChange={ e => this.handleInputChange(e)}>
                     <h1>Add a Recipe</h1>
                     <label>
                         Name:
@@ -111,7 +111,8 @@ class RecipeAdd extends React.Component {
                             name='title' 
                             value = {this.state.name}
                             className='input_wrapper'
-                            // required
+                            placeholder='Recipe Name'
+                            required
                         />
                     </label>
                     <label>
@@ -121,7 +122,7 @@ class RecipeAdd extends React.Component {
                             name='description'
                             value={this.state.description}
                             className='input_wrapper'
-                            // required
+                            required
                             placeholder='Give a short description about your recipe!'
                         />
                     </label>
@@ -144,7 +145,7 @@ class RecipeAdd extends React.Component {
                         </select>
                     </label>
                     <label>
-                        Cuisine
+                        Cuisine:
                         <select
                             name='cuisine'
                             className='select_wrapper'
@@ -197,11 +198,14 @@ class RecipeAdd extends React.Component {
                                                     >{unit}</option>
                                                 )
                                             })}
-                                            </select>                                            
+                                            </select>                               
                                         </div>
                                     );
                             })}
-                            <button onClick={this.addIngredient}>Add ingredient</button>
+                            <button 
+                                name='addIngredient'
+                                onClick={this.addNewInput}
+                            >Add ingredient</button>
                         </div>
 
                     </label>
@@ -236,7 +240,8 @@ class RecipeAdd extends React.Component {
                                 })
                             }     
                             <button 
-                                onClick={ this.addStep }
+                                name='addStep'
+                                onClick={ this.addNewInput }
                             >Add another step </button>                  
                         </div>
 
