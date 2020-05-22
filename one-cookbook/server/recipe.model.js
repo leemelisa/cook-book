@@ -26,10 +26,14 @@ let RecipeSchema = new Schema({
         type: String,
         enum: ['American', 'Chinese', 'Korean', 'Japanese', 'Mexican', 'Singaporean'],
     },
-    instructions: {
-        type: [String],
-        require: [true, 'Insert cooking instructions'],
-    },
+    instructions: [
+        {
+            step: {
+                type: [String],
+            // require: [true, 'Insert cooking instructions'],
+            }            
+        }
+    ],
     notes: {
         type: String,
         default: '',
@@ -40,28 +44,28 @@ let RecipeSchema = new Schema({
                 type: String,
                 require: [true, 'Insert ingredient name']
             },
-            measurement_num: Number,
-            measurement_unit: {
+            measurement: Number,
+            unit: {
                 type: String,
                 enum: ['cup', 'oz', 'tbsp', 'tsp', 'mL', 'L', 'g'],
             }
         }
     ],
-    ratings: [
-        {
-            message: String,
-            date_created: {
-                type: Date,
-                default: Date.now(),
-            },
-            star_rating: {
-                type: Number,
-                min: 1,
-                max: 5,
-                require: [true, 'Insert rating from 1 - 5 stars'],
-            }
-        }
-    ]
+    // ratings: [
+    //     {
+    //         message: String,
+    //         date_created: {
+    //             type: Date,
+    //             default: Date.now(),
+    //         },
+    //         star_rating: {
+    //             type: Number,
+    //             min: 1,
+    //             max: 5,
+    //             require: [true, 'Insert rating from 1 - 5 stars'],
+    //         }
+    //     }
+    // ]
 });
 
 module.exports = mongoose.model('RecipeSchema', RecipeSchema);

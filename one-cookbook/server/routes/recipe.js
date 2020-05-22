@@ -14,15 +14,16 @@ recipeRouter.get("/get", (req, res, next) => {
 });
 
 // POST a new recipe 
-recipeRouter.post("/post", (req, res, next) => {
-    let recipe = new RecipeSchema(req.body);
+recipeRouter.post("/", (req, res, next) => {
     console.log(req.body);
+    let recipe = new RecipeSchema(req.body);
+    
     recipe.save()
         .then(recipe => {
             res.status(200).json({'recipe': 'recipe added successfully'});
         })
         .catch(err => {
-            res.status(400).send('adding new recipe failed');
+            console.log('Error: ', error);
         });
 });
 
