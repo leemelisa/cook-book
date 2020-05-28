@@ -40,8 +40,6 @@ class Filter extends React.Component {
                 ingredientTitle: updatedTitle.ingredient
             });   
         } 
-
-
     }
 
     handleClearAll = () => {
@@ -54,7 +52,9 @@ class Filter extends React.Component {
         const {courseTitle, cuisineTitle, ingredientTitle} = this.state;
         return(
             <div>
+                
                 <div className='filter_container'>
+                    <label className='label_wrapper'>Filter by:</label>
                     <Dropdown 
                         title={courseTitle}
                         list={COURSES}
@@ -73,10 +73,11 @@ class Filter extends React.Component {
                         name='ingredient'
                         filterHandler={this.filterHandler}
                     />      
-                </div>        
-                <button
-                    onClick={this.handleClearAll}
-                >Clear All</button>       
+                    <button
+                        className='clear_button_wrapper'
+                        onClick={this.handleClearAll}
+                    >Clear All</button>   
+                </div>            
             </div>
         );
     }

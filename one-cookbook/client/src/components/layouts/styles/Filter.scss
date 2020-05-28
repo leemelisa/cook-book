@@ -1,5 +1,23 @@
+$background_hover: #ddd;
+
 .filter_container {
     margin: 25px;
+    padding: 15px;
+    max-height: 30px;
     border: 1px solid #e7e7e7;
     display: flex;
+    z-index: -1;
+
+    .label_wrapper {
+        padding: 5px;
+        margin-right: 15px;
+    }
+
+    .clear_button_wrapper {
+        border-radius: 3px;
+
+        &:hover {
+            background-color: $background_hover;
+        }
+    }
 }
