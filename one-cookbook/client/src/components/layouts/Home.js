@@ -1,9 +1,16 @@
 import React from 'react';
+import Filter from './Filter';
 
 class Home extends React.Component{
+    constructor(props) {
+        super(props);
+    }
+
     render(){
         return(
-            <div>Home</div>
+            <div>
+                <Filter />
+            </div>
         );
     }
 }

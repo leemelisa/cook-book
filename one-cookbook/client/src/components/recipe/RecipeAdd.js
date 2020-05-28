@@ -4,7 +4,7 @@ import headerImg from './styles/coverImg.jpg';
 
 
 const COURSES = ['Breakfast', 'Lunch', 'Dinner', 'Soup', 'Side Dish'];
-const CUISINES = ['American', 'Chinese', 'French', 'Koean', 'Japanese', 'Singaporean'];
+const CUISINES = ['American', 'Chinese', 'French', 'Korean', 'Japanese', 'Singaporean'];
 const UNITS = ['cup', 'oz', 'tbsp', 'tsp', 'mL', 'L', 'g'];
 
 class RecipeAdd extends React.Component {
@@ -207,7 +207,6 @@ class RecipeAdd extends React.Component {
                                 onClick={this.addNewInput}
                             >Add ingredient</button>
                         </div>
-
                     </label>
                     <label>
                         Serving Size:
