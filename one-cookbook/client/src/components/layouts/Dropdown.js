@@ -6,12 +6,15 @@ import './styles/Dropdown.scss';
 class Dropdown extends React.Component{
     constructor(props) {
         super(props);
-        console.log(props)
 
         this.state= {
             listOpen: false,
             headerTitle: this.props.title
         }
+    }
+
+    componentWillMount() {
+        document.addEventListener('mousedown', this.handleClickOutside, false);
     }
 
     componentDidUpdate(prevProps) {
@@ -22,15 +25,21 @@ class Dropdown extends React.Component{
         }
     }
 
+    componentWillUnmount() {
+        document.removeEventListener('mousedown', this.handleClickOutside, false);
+    }
+
     // hides course dropdown
-    handleClickOutside() {
-        this.setState={
-            listOpen: false
-        };
+    handleClickOutside = e => {
+        if (!this.node.contains(e.target)) {
+            this.setState({
+                listOpen: false
+            });
+        }
     };
 
     // hide or show dropdown respectively
-    toggleList() {
+    toggleList = () => {
         this.setState(prevState => ({
             listOpen: !prevState.listOpen
         }));
@@ -48,7 +57,7 @@ class Dropdown extends React.Component{
         const { listOpen, headerTitle } = this.state;
         const { list, name } = this.props;
         return(
-            <div className='filter_wrapper'>
+            <div ref={node => this.node = node} className='dropdown_wrapper'>
                 <div 
                     className='header_wrapper' 
                     onClick={() => this.toggleList()}
@@ -56,7 +65,7 @@ class Dropdown extends React.Component{
                     <div 
                         className='header_title'
                     >{headerTitle}</div>
-                    {/* conditonal rendering if list is open arrow up else arrow donw */}
+                    {/* conditonal rendering if list is open arrow up else arrow down */}
                     {
                         listOpen ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />
                     }                    
@@ -94,7 +103,7 @@ class Dropdown extends React.Component{
                     }
                 </ul>
                 }      
-        </div>
+            </div>
         );
     }
 }
