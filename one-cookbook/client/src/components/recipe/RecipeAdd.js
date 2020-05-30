@@ -6,6 +6,7 @@ import headerImg from './styles/coverImg.jpg';
 const COURSES = ['Breakfast', 'Lunch', 'Dinner', 'Soup', 'Side Dish'];
 const CUISINES = ['American', 'Chinese', 'French', 'Korean', 'Japanese', 'Singaporean'];
 const UNITS = ['cup', 'oz', 'tbsp', 'tsp', 'mL', 'L', 'g'];
+const KEYWORDS = ['Beef', 'Chicken', 'Fish', 'Pork', 'Seafood', 'Tofu', 'Vegetable'];
 
 class RecipeAdd extends React.Component {
     constructor(props) {
@@ -23,7 +24,8 @@ class RecipeAdd extends React.Component {
                 unit: 'cup'
             }],
             instructions: [{step: ''}],
-            notes: '',
+            keywordSet: new Set(),
+            notes: ''
         };
     }
 
@@ -37,14 +39,14 @@ class RecipeAdd extends React.Component {
             let ingredients = [...this.state.ingredients];
             ingredients[e.target.dataset.id][e.target.name] = e.target.value;
             this.setState({ ingredients })
-        } else {
+        } else if (e.target.type === 'checkbox') {
+            this.handleKeywordChange(e);                 
+        } else  {
             this.setState({
                 ...this.state,
                 [e.target.name]: e.target.value
             });            
         }
-
-        // console.log(`${e.target.name}: ${e.target.value}`)
     }
 
     // add a empty default value to instruction/ingredients array cause auto reloading to 
@@ -68,7 +70,32 @@ class RecipeAdd extends React.Component {
         e.preventDefault();
     }
 
-    handleOnSubmit = e => {
+    // update what keywords are checked
+    handleKeywordChange = e => {
+        let {keywordSet} = this.state;
+        let item = e.target.name;
+       
+        // keyword isnt found set as true
+        if (!keywordSet.has(item)) {
+            this.setState((prev) => ({
+                keywordSet: keywordSet.add(item)
+            }));
+        } else {
+            // item is click again remove from map
+            keywordSet.delete(item);
+            this.setState({
+                keywordSet
+            })
+        }
+    }
+
+    handleOnSubmit = e => {    
+        let parseKeyword = [];
+        // parse keyword to match db
+        this.state.keywordSet.forEach((word) => {
+            parseKeyword.push({keyword: word })
+        })
+
         let data = {
             title: this.state.title,
             description: this.state.description,
@@ -77,6 +104,7 @@ class RecipeAdd extends React.Component {
             serving_sizes: this.state.servingSize,
             ingredients: this.state.ingredients,
             instructions: this.state.instructions,
+            keywords: parseKeyword,
             notes: this.state.notes
         }
         console.log(data);
@@ -204,7 +232,6 @@ class RecipeAdd extends React.Component {
                             })}
                             <button 
                                 name='addIngredient'
-                                onClick={this.addNewInput}
                             >Add ingredient</button>
                         </div>
                     </label>
@@ -243,9 +270,27 @@ class RecipeAdd extends React.Component {
                                 onClick={ this.addNewInput }
                             >Add another step </button>                  
                         </div>
-
                     </label>
-
+                    <label>
+                        Keywords: 
+                        <div className='keyword_container'>
+                            {
+                                KEYWORDS.map(keyword => {
+                                    return(
+                                        <span>
+                                            <input 
+                                                type='checkbox' 
+                                                id={keyword} 
+                                                name={keyword}
+                                                value={keyword}
+                                            />
+                                            <label>{keyword}</label>
+                                        </span>
+                                    )
+                                })
+                            }                            
+                        </div>
+                    </label>
                     <label>
                         Notes:
                         <textarea 

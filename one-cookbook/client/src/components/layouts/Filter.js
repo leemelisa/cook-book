@@ -27,15 +27,15 @@ class Filter extends React.Component {
 
     filterHandler(updatedTitle) {
         console.log(updatedTitle);
-        if (updatedTitle.course != '') {
+        if (updatedTitle.course !== '') {
             this.setState({
                 courseTitle: updatedTitle.course
             });           
-        } else if (updatedTitle.cuisine != '') {
+        } else if (updatedTitle.cuisine !== '') {
             this.setState({
                 cuisineTitle: updatedTitle.cuisine
             });   
-        } else if (updatedTitle.ingredient != '') {
+        } else if (updatedTitle.ingredient !== '') {
             this.setState({
                 ingredientTitle: updatedTitle.ingredient
             });   
