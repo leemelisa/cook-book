@@ -51,6 +51,13 @@ let RecipeSchema = new Schema({
             }
         }
     ],
+    keywords: [
+        {
+            keyword: {
+                type: String
+            }
+        }
+    ]
     // ratings: [
     //     {
     //         message: String,
