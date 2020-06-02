@@ -34,3 +34,18 @@ On a new terminal window run mongo by entering: <br/>
 
 
 ## Running locally
+To start client side enter the following in the `/client` folder:<br/>
+`npm start`<br/><br/>
+
+To start backend side run the following in the `/server` folder:<br/>
+`nodemon server`
+
+## API Keys Setup
+To add your own api keys create a `.env` file within the `/client` folder
+```
+/one-cookbook
+    /client
+        .env
+```
+Add the following into the `.env` file replacing YOUR UNSPLASH API KEY with your own<br/>
+`REACT_APP_UNSPLASH_API_KEY=YOUR UNSPLASH API KEY`
