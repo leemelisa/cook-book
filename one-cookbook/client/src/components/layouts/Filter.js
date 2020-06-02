@@ -4,7 +4,7 @@ import Dropdown from './Dropdown';
 
 const COURSES = ['Breakfast', 'Lunch', 'Dinner', 'Soup', 'Side Dish'];
 const CUISINES = ['American', 'Chinese', 'French', 'Korean', 'Japanese', 'Singaporean'];
-const INGREDIENT_TYPE = ['Beef', 'Chicken', 'Fish', 'Pork', 'Seafood', 'Tofu', 'Vegetable'];
+const INGREDIENT_TYPE = ['Beef', 'Chicken', 'Dairy', 'Fish', 'Nuts', 'Pork', 'Seafood', 'Tofu', 'Vegetable'];
 
 class Filter extends React.Component {
     constructor(props) {

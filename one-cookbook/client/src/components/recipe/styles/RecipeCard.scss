@@ -1,0 +1,42 @@
+%border_shared {
+    // margin: 25px;
+    // padding: 15px;
+    border-radius: 3px;
+    border: 1px solid #ccc;    
+}
+
+.recipe_container {
+
+    height: 300px;
+    width: 300px;
+    
+    .recipe_content {
+        // z-index: -1;
+        margin: 5%;
+        height: 60%;
+        @extend %border_shared;
+        position: relative;
+
+        .img_wrapper {
+            width: 100%;
+            object-fit: cover;
+            height: 100%;
+
+            &:hover{
+                opacity: 0.3;
+            }
+        }
+        .content_description{
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            width: 100%;    // needed horz isnt entire take up due to postion abs
+        }
+    }
+    .recipe_title {
+        margin: 5%;
+        padding: 3%;
+        @extend %border_shared;
+        text-align: center;
+    }
+}

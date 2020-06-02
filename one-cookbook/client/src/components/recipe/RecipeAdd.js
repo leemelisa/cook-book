@@ -6,7 +6,7 @@ import headerImg from './styles/coverImg.jpg';
 const COURSES = ['Breakfast', 'Lunch', 'Dinner', 'Soup', 'Side Dish'];
 const CUISINES = ['American', 'Chinese', 'French', 'Korean', 'Japanese', 'Singaporean'];
 const UNITS = ['cup', 'oz', 'tbsp', 'tsp', 'mL', 'L', 'g'];
-const KEYWORDS = ['Beef', 'Chicken', 'Fish', 'Pork', 'Seafood', 'Tofu', 'Vegetable'];
+const KEYWORDS = ['Beef', 'Chicken', 'Dairy', 'Fish', 'Nuts', 'Pork', 'Seafood', 'Tofu', 'Vegetable'];
 
 class RecipeAdd extends React.Component {
     constructor(props) {
@@ -57,7 +57,7 @@ class RecipeAdd extends React.Component {
             this.setState((prevState) => ({
                 instructions: [...prevState.instructions, {step: ''}]
             }));            
-        } else {
+        } else if (e.target.name === 'addIngredient') {
             this.setState((prevState) => ({
                 ingredients: [...prevState.ingredients, {
                     name: '', 
@@ -232,6 +232,7 @@ class RecipeAdd extends React.Component {
                             })}
                             <button 
                                 name='addIngredient'
+                                onClick={ this.addNewInput }
                             >Add ingredient</button>
                         </div>
                     </label>
