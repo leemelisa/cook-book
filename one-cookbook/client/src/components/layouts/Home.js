@@ -57,6 +57,7 @@ class Home extends React.Component{
 
     // update filter states used as a call to update parent state
     filterHandler = (updatedTitle) => {
+        // console.log(updatedTitle);
         if (updatedTitle.course !== '') {
             this.setState({
                 courseTitle: updatedTitle.course

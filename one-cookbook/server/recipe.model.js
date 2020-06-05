@@ -24,7 +24,7 @@ let RecipeSchema = new Schema({
     },
     cuisine: {
         type: String,
-        enum: ['American', 'Chinese', 'Korean', 'Japanese', 'Mexican', 'Singaporean'],
+        enum: ['American', 'Chinese', 'French', 'Japanese', 'Korean', 'Mexican', 'Singaporean'],
     },
     instructions: [
         {
