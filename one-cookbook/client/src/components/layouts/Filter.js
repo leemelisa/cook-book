@@ -25,6 +25,10 @@ class Filter extends React.Component {
         };
     }
 
+    componentDidUpdate() {
+        console.log('filtered options', this.state)
+    }
+
     filterHandler(updatedTitle) {
         console.log(updatedTitle);
         if (updatedTitle.course !== '') {
@@ -52,7 +56,6 @@ class Filter extends React.Component {
         const {courseTitle, cuisineTitle, ingredientTitle} = this.state;
         return(
             <div>
-                
                 <div className='filter_container'>
                     <label className='label_wrapper'>Filter by:</label>
                     <Dropdown 

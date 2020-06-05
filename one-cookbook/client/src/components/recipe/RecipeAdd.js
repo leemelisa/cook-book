@@ -4,7 +4,7 @@ import headerImg from './styles/coverImg.jpg';
 
 
 const COURSES = ['Breakfast', 'Lunch', 'Dinner', 'Soup', 'Side Dish'];
-const CUISINES = ['American', 'Chinese', 'French', 'Korean', 'Japanese', 'Singaporean'];
+const CUISINES = ['American', 'Chinese', 'French', 'Japanese', 'Korean', 'Mexican', 'Singaporean'];
 const UNITS = ['cup', 'oz', 'tbsp', 'tsp', 'mL', 'L', 'g'];
 const KEYWORDS = ['Beef', 'Chicken', 'Dairy', 'Fish', 'Nuts', 'Pork', 'Seafood', 'Tofu', 'Vegetable'];
 

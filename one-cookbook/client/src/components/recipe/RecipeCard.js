@@ -39,7 +39,7 @@ class RecipeCard extends React.Component {
         })
         .then(response => response.json())
         .then(data => {
-            console.log('Data: ', data);
+            // console.log('Data: ', data);
             this.setState({
                 imgData: data.results
             })
@@ -51,7 +51,6 @@ class RecipeCard extends React.Component {
 
     render() {       
         return(
-
             <div className='recipe_container'>
                     {this.state.imgData.length > 0 && 
                         <div className='recipe_content'>
