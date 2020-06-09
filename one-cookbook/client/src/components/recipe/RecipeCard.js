@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import './styles/RecipeCard.scss';
 
 class RecipeCard extends React.Component {
@@ -15,6 +16,10 @@ class RecipeCard extends React.Component {
         this.fetchPhotos(this.props.recipe.title);
     }
 
+    componentDidUpdate() {
+        this.fetchPhotos(this.props.recipe.title);
+    }
+
     mouseEnter = () => {
         this.setState({
             isHovering: true
@@ -25,6 +30,16 @@ class RecipeCard extends React.Component {
         this.setState({
             isHovering: false
         })
+    }
+
+    handleRedirect = () => {
+        const location = {
+            pathname: '/recipe',
+            state: {
+                recipeDetails: this.props.recipe
+            }
+        }
+        this.props.history.push(location);
     }
 
     fetchPhotos(searchTerm) {
@@ -51,10 +66,11 @@ class RecipeCard extends React.Component {
 
     render() {       
         return(
-            <div className='recipe_container'>
+            <div className='recipe_container' onClick={this.handleRedirect}>
                     {this.state.imgData.length > 0 && 
                         <div className='recipe_content'>
                             <img 
+                                alt={this.state.imgData[0].alt_description}
                                 src={this.state.imgData[0].urls.small} 
                                 className='img_wrapper'
                                 onMouseEnter={this.mouseEnter}
@@ -77,4 +93,4 @@ class RecipeCard extends React.Component {
   
 }
 
-export default RecipeCard;
+export default withRouter(RecipeCard);

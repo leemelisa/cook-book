@@ -9,6 +9,7 @@ const INGREDIENT_TYPE = ['Beef', 'Chicken', 'Dairy', 'Fish', 'Nuts', 'Pork', 'Se
 
 
 class Home extends React.Component{
+
     constructor(props) {
         super(props);
 
@@ -51,8 +52,6 @@ class Home extends React.Component{
         if (ingredientTitle !== 'Select ingredient') {
             filterQueryParams.keywords = ingredientTitle;
         } 
-
-        console.log(filterQueryParams);
     }
 
     // update filter states used as a call to update parent state
@@ -114,7 +113,7 @@ class Home extends React.Component{
             params.append(`${param}`, `${filterQueryParams[param]}`);
         }
 
-        console.log(url + '?' + params.toString())
+        // console.log(url + '?' + params.toString())
 
         fetch(url + '?' + params.toString(), {
             method: 'GET',
@@ -125,7 +124,7 @@ class Home extends React.Component{
             // parse json response
             .then(response => response.json())
             .then(data => {
-                console.log('fetchFilteredRecipe Data: ', data);
+                // console.log('fetchFilteredRecipe Data: ', data);
                 this.setState({
                     recipes: data
                 });
@@ -173,7 +172,9 @@ class Home extends React.Component{
                     <div
                         className="error_wrapper"
                     >Oh no looks we couldn't find any recipes that matchs your filters.</div> : 
-                    <RecipeList recipes={this.state.recipes}/>
+                    <RecipeList 
+                        recipes={this.state.recipes}
+                    />
                 }
             </div>
         );

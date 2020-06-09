@@ -12,7 +12,7 @@ const RecipeList = props => {
                     return(
                         <RecipeCard 
                             key={idx}
-                            recipe={recipe} 
+                            recipe={recipe}
                         />
                     );
                 })

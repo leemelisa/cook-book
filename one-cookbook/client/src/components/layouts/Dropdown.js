@@ -13,7 +13,7 @@ class Dropdown extends React.Component{
         }
     }
 
-    componentWillMount() {
+    componentDidMount() {
         document.addEventListener('mousedown', this.handleClickOutside, false);
     }
 
@@ -24,6 +24,7 @@ class Dropdown extends React.Component{
             })
         }
     }
+
 
     componentWillUnmount() {
         document.removeEventListener('mousedown', this.handleClickOutside, false);
