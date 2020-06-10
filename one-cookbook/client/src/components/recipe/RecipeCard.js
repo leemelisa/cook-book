@@ -36,7 +36,8 @@ class RecipeCard extends React.Component {
         const location = {
             pathname: '/recipe',
             state: {
-                recipeDetails: this.props.recipe
+                recipeDetails: this.props.recipe,
+                imgDetails: this.state.imgData[0],
             }
         }
         this.props.history.push(location);

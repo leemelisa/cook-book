@@ -1,0 +1,46 @@
+.img_wrapper{
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    bottom: 0;
+}
+
+.recipe_detail_container{
+    border-radius: 5px;    
+    margin: auto;
+    width: 75%;
+    padding: 10px;
+
+    .title_wrapper{
+        border-bottom: 2px solid #f7f7f7;
+        padding-bottom: 4px;
+        font-family: Georgia, serif!important;
+    }
+
+    .recipe_details{
+        padding-top: 10px;
+        color: #595959;
+        font-size: 13px;
+        display: inline-block;
+
+        .single_detail{
+            padding: 10px 10px, 10px 0;
+        }
+    }
+
+    .recipe_subtitle{
+        padding-bottom: 4px;
+        font-family: Georgia, serif!important;       
+    }
+
+    .ingredient_list{
+        list-style-type: circle;
+        background-color: white;
+        border: none;
+        
+        .ingredient_item{
+            float: unset;
+            margin-left: 40px;
+        }
+    }
+}

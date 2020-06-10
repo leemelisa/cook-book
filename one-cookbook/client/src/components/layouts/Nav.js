@@ -30,11 +30,6 @@ class Nav extends React.Component {
                             Add Recipes
                         </NavLink>
                     </li>                    
-                    <li>
-                        <NavLink exact to='/recipe'>
-                            Recipes
-                        </NavLink>
-                    </li>
                 </ul>
             </div>
         );

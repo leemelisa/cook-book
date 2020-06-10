@@ -129,8 +129,16 @@ class RecipeAdd extends React.Component {
         let { instructions, ingredients } = this.state;
         return(
             <div>
-                <img src={headerImg} alt='headerLogo' className='fixed_picture' />
-                <form className='form_container' onSubmit={ e => this.handleOnSubmit(e)} onChange={ e => this.handleInputChange(e)}>
+                <img 
+                    src={headerImg} 
+                    alt='headerLogo' 
+                    className='fixed_picture' 
+                />
+                <form 
+                    className='form_container' 
+                    onSubmit={ e => this.handleOnSubmit(e)} 
+                    onChange={ e => this.handleInputChange(e)}
+                >
                     <h1>Add a Recipe</h1>
                     <label>
                         Name:
