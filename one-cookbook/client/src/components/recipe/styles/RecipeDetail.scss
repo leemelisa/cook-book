@@ -8,7 +8,7 @@
 .recipe_detail_container{
     border-radius: 5px;    
     margin: auto;
-    width: 75%;
+    width: 65%;
     padding: 10px;
 
     .title_wrapper{
@@ -30,7 +30,7 @@
 
     .recipe_subtitle{
         padding-bottom: 4px;
-        font-family: Georgia, serif!important;       
+        font-family: Georgia, serif!important;              
     }
 
     .ingredient_list{
@@ -40,7 +40,15 @@
         
         .ingredient_item{
             float: unset;
-            margin-left: 40px;
+            margin: 10px 0 10px 40px;
         }
+    }
+
+    .recipe_step{
+        margin: 10px 0 10px 0;
+    } 
+
+    .recipe_note{
+        margin-left: 40px;
     }
 }

@@ -32,14 +32,15 @@ const RecipeDetail = props => {
                     </div>
                     <div>
                         Keywords: 
-                        {recipeDetails.keywords.map(keyword => {
-                            return(
-                                <span>
-                                    {` ${keyword.keyword}`}
-                                </span>
-                            );
-                        })}
-                </div>
+                        {recipeDetails.keywords === undefined || recipeDetails.keywords.length === 0
+                            ? null
+                            : recipeDetails.keywords.map(keyword => {
+                                return(
+                                    <span> {keyword.keyword}</span>
+                                );
+                            })
+                        }
+                    </div>
                 </div>
                 <div>
                     <h2 className="recipe_subtitle">
@@ -63,7 +64,7 @@ const RecipeDetail = props => {
                     <ol>
                         {recipeDetails.instructions.map((step, idx) => {
                             return(
-                                <li>
+                                <li className="recipe_step">
                                     {step.step[0]}
                                 </li>
                             );
@@ -75,7 +76,12 @@ const RecipeDetail = props => {
                     <h2 className="recipe_subtitle">
                         Notes:
                     </h2>
-                    {recipeDetails.notes}
+                    <div className="recipe_note">
+                        {recipeDetails.notes === "" 
+                            ? `Looks like the author didn't leave us a note`
+                            : recipeDetails.notes
+                        }                        
+                    </div>                 
                 </div>
             </div>
 

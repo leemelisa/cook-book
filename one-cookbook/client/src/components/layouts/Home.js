@@ -2,11 +2,7 @@ import React from 'react';
 import RecipeList from '../recipe/RecipeList'
 import Dropdown from './Dropdown';
 import './styles/Home.scss';
-
-const COURSES = ['Breakfast', 'Lunch', 'Dinner', 'Soup', 'Side Dish'];
-const CUISINES = ['American', 'Chinese', 'French', 'Japanese', 'Korean', 'Mexican', 'Singaporean'];
-const INGREDIENT_TYPE = ['Beef', 'Chicken', 'Dairy', 'Fish', 'Nuts', 'Pork', 'Seafood', 'Tofu', 'Vegetable'];
-
+import { COURSES,  CUISINES, INGREDIENT_TYPE} from '../../sharedData/categories.js';
 
 class Home extends React.Component{
 
@@ -171,7 +167,7 @@ class Home extends React.Component{
                     this.state.recipes.length === 0  ? 
                     <div
                         className="error_wrapper"
-                    >Oh no looks we couldn't find any recipes that matchs your filters.</div> : 
+                    >Oh no looks we couldn't find any recipes that matchs your criteria.</div> : 
                     <RecipeList 
                         recipes={this.state.recipes}
                     />

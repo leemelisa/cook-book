@@ -1,12 +1,7 @@
 import React from 'react';
 import './styles/RecipeAdd.scss';
 import headerImg from './styles/coverImg.jpg';
-
-
-const COURSES = ['Breakfast', 'Lunch', 'Dinner', 'Soup', 'Side Dish'];
-const CUISINES = ['American', 'Chinese', 'French', 'Japanese', 'Korean', 'Mexican', 'Singaporean'];
-const UNITS = ['cup', 'oz', 'tbsp', 'tsp', 'mL', 'L', 'g'];
-const KEYWORDS = ['Beef', 'Chicken', 'Dairy', 'Fish', 'Nuts', 'Pork', 'Seafood', 'Tofu', 'Vegetable'];
+import { COURSES,  CUISINES, UNITS, KEYWORDS} from '../../sharedData/categories.js';
 
 class RecipeAdd extends React.Component {
     constructor(props) {
@@ -122,7 +117,6 @@ class RecipeAdd extends React.Component {
             .catch(error => {
                 console.log('Error: ', error);
             })
-        e.preventDefault();
     }
 
     render() {
@@ -168,7 +162,7 @@ class RecipeAdd extends React.Component {
                             name='course'
                             className='select_wrapper'
                             value={this.state.course}
-                            // required
+                            required
                         >
                             {COURSES.map(course => {
                                 return (
@@ -186,7 +180,7 @@ class RecipeAdd extends React.Component {
                             name='cuisine'
                             className='select_wrapper'
                             value={this.state.cuisine}
-                            // required
+                            required
                         >
                         {CUISINES.map(cuisine => {
                             return (
@@ -252,7 +246,7 @@ class RecipeAdd extends React.Component {
                             min='1'
                             max='10'
                             className='input_wrapper'
-                            // required
+                            required
                         />
                     </label>
                     <label>

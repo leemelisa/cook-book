@@ -1,0 +1,130 @@
+{
+  title: 'Mash Potatoes',
+  description: 'Presenting…my all-time favorite mashed potatoes recipe.  These homemade mashed potatoes are perfectly rich and creamy, full of great flavor, easy to make, and always a crowd fave.',
+  course: 'Side Dish',
+  cuisine: 'American',
+  serving_sizes: '4',
+  ingredients: [
+    { name: 'Potato', measurement: '5', unit: 'cup' },
+    { name: 'Garlic', measurement: '1', unit: 'tbsp' },
+    { name: 'Butter', measurement: '3', unit: 'tbsp' },
+    { name: 'Milk', measurement: '1', unit: 'cup' },
+    { name: 'Cream Cheese', measurement: '2', unit: 'tbsp' },
+    { name: 'Salt', measurement: '1', unit: 'tsp' }
+  ],
+  instructions: [
+    {
+      step: 'Cut your potatoes before boiling.  I know, so many of us grew up boiling whole potatoes.  But the problem is that large, whole potatoes cook unevenly.  So instead, cut your potatoes into evenly sized smaller pieces for quick and even boiling.'
+    },
+    {
+      step: 'Don’t overboil.  Or maybe the tip should be, don’t multitask too much near the end of the potatoes’ cooking time.  ;)  You want to keep a close eye on them.  And as soon as a dinner knife can be inserted easily into a potato with minimal resistance, they’re ready to go.'
+    },
+    {
+      step: 'Pan “dry” after cooking.  Then, one more step!  Immediately after the potatoes have been drained, return them to the hot stockpot, and place it back on the hot burner over low heat.  Hold the stockpot handles with oven mitts, and gently shake the pan for about 1 minute to release some of the steam and moisture from the potatoes.  Then remove the pan from the heat and set it aside, and your potatoes will be ready to mash'
+    },
+    {
+      step: 'Don’t overmix!  In general, you want to stir the liquids into your mashed potatoes until they are just combined.  Otherwise if you overmix, they can crossover into gummy territory, which is no good.'
+    },
+    {
+      step: 'Season with salt along the way.  We will use fine sea salt to season the potatoes both (1) in the water while they are boiling and (2) afterwards, when adding in the butter, milk and cream cheese.  As always when seasoning a recipe, taste-taste-taste along the way while you are preparing the recipe, and add more salt as needed.'
+    },
+    {
+      step: 'Invest in your preferred kind of masher.  It’s a worthy utensil to have in your kitchen!  '
+    },
+    { step: 'Enjoy!' }
+  ],
+  keywords: [ { keyword: 'Dairy' }, { keyword: 'Vegetable' } ],
+  notes: 'Possible variations: Garlic mashed potatoes: To make your mashed potatoes extra garlicky, feel free to double or triple the amount of garlic added to this recipe.  Or, feel free to roast a head of garlic while the potatoes are boiling and add the roasted cloves to the mash for extra-rich flavor.'
+}
+{
+  title: 'Steak',
+  description: "This sirloin steak is seared to golden brown perfection, then topped with garlic and herb butter. A simple, yet totally satisfying way to enjoy steak that's easy enough for an everyday meal, yet elegant enough for company.",
+  course: 'Dinner',
+  cuisine: 'American',
+  serving_sizes: '1',
+  ingredients: [
+    { name: 'butter', measurement: '4', unit: 'tbsp' },
+    { name: ' sirloin steak', measurement: '12', unit: 'oz' },
+    { name: ' olive oil', measurement: '1', unit: 'tbsp' },
+    { name: 'minced garlic', measurement: '0.50', unit: 'tsp' },
+    { name: 'parsley', measurement: '1', unit: 'tbsp' }
+  ],
+  instructions: [
+    {
+      step: 'Pat each steak dry with a paper towel. Heat a large cast iron skillet or other heavy pan over medium high heat.'
+    },
+    {
+      step: 'Pour the olive oil into the pan. Season the steaks on both sides with salt and pepper.'
+    },
+    {
+      step: 'Place the steaks in a single layer in the pan. Cook for 4-5 minutes per side or until browned. Use a thermometer to cook the steak to your desired level of doneness. I recommend cooking to medium which is 145 degrees F.'
+    },
+    {
+      step: 'While the steak is cooking, place the butter in a bowl along with the garlic, herbs, salt and pepper. Stir to combine.'
+    },
+    {
+      step: 'Let the steaks rest for at least 5 minutes off the heat. Place a dollop of butter on top of each steak. Slice the steak. Garnish with additional fresh herbs if desired, then serve.'
+    }
+  ],
+  keywords: [ { keyword: 'Beef' } ],
+  notes: 'Can substitute parsley for any fresh herb (thyme or chives, plus more for garnish) '
+}
+{
+  title: 'Fries',
+  description: 'Delicious seasoned French fries baked to the perfect level of crispiness perfect as a side dish. ',
+  course: 'Side Dish',
+  cuisine: 'American',
+  serving_sizes: '1',
+  ingredients: [
+    {
+      name: 'Russet Potatoes, sliced into fries',
+      measurement: '12',
+      unit: 'cup'
+    },
+    {
+      name: 'Extra Virgin Olive Oil',
+      measurement: '1.5',
+      unit: 'tbsp'
+    },
+    { name: 'Dried Thyme', measurement: '0.25', unit: 'tsp' },
+    { name: 'Dried Oregano', measurement: '0.25', unit: 'tsp' },
+    { name: 'Dried Rosemary', measurement: '0.125', unit: 'tsp' },
+    { name: 'Garlic Powder', measurement: '0.25', unit: 'tsp' },
+    { name: 'Old Bay Seasoning', measurement: '0.25', unit: 'tsp' }
+  ],
+  instructions: [
+    {
+      step: "First, prepare the potatoes. You can peel them if you desire, but it isn't necessary. Just wash them well and slice them into thin French fries. "
+    },
+    {
+      step: "Once you have your fries ready, soak them in cold water for about one hour. You can skip this step if you're crunched for time."
+    },
+    {
+      step: "After you've soaked your fries (or if you skipped this step) drain them. Be sure to dry your potatoes really well whether you've soaked them or not. "
+    },
+    {
+      step: 'Preheat your oven to 425 and lining a cookie sheet with foil. Spread just a bit of olive oil onto the foil to keep your fries from sticking.'
+    },
+    {
+      step: 'Next, in a small bowl combine all spices until well blended.'
+    },
+    {
+      step: 'Take all of the fries and place them in a gallon freezer bag. Add the olive oil into the bag and squish them around. '
+    },
+    {
+      step: "After you've blended the olive oil, pour the spice mix into the bag. Seal it and shake until all of the potatoes are well coated with the spice and oil mixture. "
+    },
+    {
+      step: 'Dump the potatoes onto your foil lined, oiled cookie sheet into a single layer.'
+    },
+    {
+      step: 'Bake at 425 for about 30-45 minutes or until light golden brown and tender.'
+    }
+  ],
+  keywords: [ { keyword: 'Beef' }, { keyword: 'Vegetable' } ],
+  notes: 'prep time: 10 MINUTES\n' +
+    'cook time: 35 MINUTES\n' +
+    'soaking time: 1 HOUR\n' +
+    'total time: 1 HOUR 45 MINUTES'
+}
+
