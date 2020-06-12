@@ -41,11 +41,14 @@ To start backend side run the following in the `/server` folder:<br/>
 `nodemon server`
 
 ## API Keys Setup
+Sign up for [unsplash](https://unsplash.com/documentation#creating-a-developer-account) to obtain an unsplashi api key.
 To add your own api keys create a `.env` file within the `/client` folder
 ```
 /one-cookbook
     /client
         .env
 ```
-Add the following into the `.env` file replacing YOUR UNSPLASH API KEY with your own<br/>
-`REACT_APP_UNSPLASH_API_KEY=YOUR UNSPLASH API KEY`
+Add the following into the `.env` file insert the following and replacing YOUR UNSPLASH API KEY with your own<br/>
+`REACT_APP_UNSPLASH_API_KEY=YOUR OWN UNSPLASH API KEY`<br/><br/>
+Add [Google api key](https://developers.google.com/docs/api/how-tos/authorizing): go into the `.env` file insert the following and replacing YOUR GOOGLE API KEY with your own<br/>
+`REACT_APP_GOOGLE_API_KEY=YOUR OWN GOOGLE API KEY`<br/>
