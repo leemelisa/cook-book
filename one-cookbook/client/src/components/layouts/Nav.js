@@ -15,6 +15,9 @@ class Nav extends React.Component {
                             One Cookbook
                         </NavLink>
                     </li>
+                    <li className="g_button">
+                        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                    </li> 
                     <li>
                         <NavLink exact to='/favorite'>
                             Favs
@@ -29,7 +32,7 @@ class Nav extends React.Component {
                         <NavLink exact to='/recipe/add'>
                             Add Recipes
                         </NavLink>
-                    </li>                    
+                    </li>                   
                 </ul>
             </div>
         );
